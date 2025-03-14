@@ -12,24 +12,6 @@ $password = '';
 $banco = new PDO($dsn, $user, $password);
 
 
-
-
-$user = $_POST['user'];
-$senha = $_POST['senha'];
-$id_pessoa = $banco->lastInsertId();
-
-$insert = 'INSERT INTO tb_usuario (usuario, senha, id_pessoa) VALUE (:user , :senha, :id_pessoa)';
-
-$box = $banco->prepare($insert);
-
-$box->execute([ 
-    ':user' => $user,
-    ':senha' => $senha,
-    ':id_pessoa' => $id_pessoa,
-]);
-
-
-
 $nome = $_POST['nome'];
 $nasc = $_POST['nasc'];
 $cpf = $_POST['cpf'];
@@ -55,4 +37,19 @@ $box->execute([
     ':n_casa' => $n_casa,
     ':bairro' => $bairro,
     ':cidade' => $cidade,
+]);
+
+
+$user = $_POST['user'];
+$senha = $_POST['senha'];
+$id_pessoa = $banco->lastInsertId();
+
+$insert = 'INSERT INTO tb_usuario (usuario, senha, id_pessoa) VALUE (:user , :senha, :id_pessoa)';
+
+$box = $banco->prepare($insert);
+
+$box->execute([ 
+    ':user' => $user,
+    ':senha' => $senha,
+    ':id_pessoa' => $id_pessoa,
 ]);

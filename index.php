@@ -12,19 +12,18 @@
 
 <body>
     <main>
-        <div class="login-container" id="login-container">
+        <div class="login-container" >
             <div class="form-container">
 
-                <form class="form form-login">
+                <form class="form form-login" action="./aux_login.php" method="POST">
                     <h2 class="form-title">Entrar</h2>
                     
                     <div class="form-input-container">
-                        <input type="text" class="form-input" placeholder="Usuario">
-                        <input type="password" class="form-input" placeholder="Senha">
+                        <input type="text" name="user" class="form-input" placeholder="Usuario">
+                        <input type="password" name="pass" class="form-input" placeholder="Senha">
                     </div>
-
-                    <a href="#" class="form-link">Esqueceu a senha?</a>
-                    <a href="#"class="form-button">Entrar</a>
+                    <a href="./changePass.php" class="form-link">Esqueceu a senha?</a>
+                    <input type="submit" class="form-button" value="Entrar">
                 </form>
 
                 <form class="form form-register" action="./user_cadastro.php" method="POST">
@@ -42,7 +41,7 @@
                             <input type="number" class="form-input" placeholder="Numero da casa" name="n_casa">
                             <input type="text" class="form-input" placeholder="Bairro" name="bairro">
                             <input type="text" class="form-input" placeholder="Cidade" name="cidade">
-                            <input type="submit" class="form-button">
+                            <input type="submit" class="form-button" value="Cadastrar">
                     </div>
                 </form>
             </div>
