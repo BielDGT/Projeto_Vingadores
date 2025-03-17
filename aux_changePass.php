@@ -1,11 +1,8 @@
 <?php
  
 echo '<h1> Aux change pass.php </h1>';
-
-echo '<pre>';
-var_dump($_POST);
  
-    $nome = $_POST['nome'];
+    $usuario = $_POST['usuario'];
     $cpf = $_POST['cpf'];
  
  
@@ -15,15 +12,26 @@ var_dump($_POST);
 
     $banco = new PDO($dsn, $user, $password);
 
-    $queryUsuarioSenha = 'SELECT nome, cpf FROM tb_pessoa WHERE nome = "' .$nome . '" AND cpf = "' .$cpf .'"';
+    $queryUsuarioSenha = 'SELECT tb_usuario.usuario, tb_pessoa.cpf FROM tb_pessoa INNER JOIN tb_usuario ON tb_pessoa.id = tb_usuario.id_pessoa 
+    WHERE tb_usuario.usuario = "' . $usuario . ' "AND tb_pessoa.cpf = "' . $cpf .'"';
+
 
     $resultado = $banco-> query($queryUsuarioSenha)->fetch();
  
-    var_dump ($resultado);
  
-    if (!empty($resultado)&& $resultado != false){
-        header ('location:update_changePass.php');
- 
+    if (!empty($resultado)&& $resultado != false){ 
+        ?>
+        
+       <html>
+       <form action="./update_changePass.php" method="POST">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>">
+        <label for="newPass">Insira a nova senha</label>
+        <input type="password" name="newPass" placeholder="Senha" >
+        <input type="submit" value="Confirmar">
+        </form>
+        </html>
+
+        <?php
     }   else {
         header('location:changePass.php');
     }

@@ -20,13 +20,13 @@
 
 <main class="container text-center my-5">
     <h1>Trocar senha</h1>
-    <p>Insira o nome e cpf para trocar senha</p>
+    <p>Insira o Usuario e cpf para trocar senha</p>
     <form action="./aux_changePass.php" method="POST">
 
         <div class="row mt-2">
             <div class="col">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" class="form-control">
+                <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" class="form-control">
             </div>
             <div class="col">
                 <label for="cpf">CPF</label>

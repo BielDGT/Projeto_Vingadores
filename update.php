@@ -54,3 +54,8 @@ $box->execute([
     ':cidade' => $cidade,
     
 ]);
+
+echo '<script> 
+alert("Usuario Atualizado com Sucesso!!!")
+window.location.replace("user_lista.php")
+</script>';

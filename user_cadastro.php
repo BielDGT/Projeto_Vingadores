@@ -53,3 +53,8 @@ $box->execute([
     ':senha' => $senha,
     ':id_pessoa' => $id_pessoa,
 ]);
+
+echo '<script> 
+alert("Usuario Cadastrado com Sucesso!!!")
+window.location.replace("index.php")
+</script>';
