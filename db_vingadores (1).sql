@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/03/2025 às 16:20
+-- Tempo de geração: 18/03/2025 às 15:43
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `tb_pessoa` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `ano_nascimento` year(4) DEFAULT NULL,
-  `cpf` varchar(11) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
   `telefone_1` varchar(11) DEFAULT NULL,
   `telefone_2` varchar(11) DEFAULT NULL,
   `logradouro` varchar(150) DEFAULT NULL,
@@ -51,8 +51,8 @@ INSERT INTO `tb_pessoa` (`id`, `nome`, `ano_nascimento`, `cpf`, `telefone_1`, `t
 (4, 'Natasha Romanoff', '1984', '65432198700', '777888999', '770077007', 'Rua 48, 4A', 12, 'Brooklyn Heights', 'Nova York'),
 (5, 'Thor Odinson', '1972', '11122233344', '555666777', NULL, 'Asgard Palace', 1, 'Asgard', 'Asgard'),
 (6, 'Bruce Banner', '1972', '99988877766', '333444555', NULL, '123 Gamma Avenue', 7, 'Culver City', 'Los Angeles'),
-(7, '11111111111111', '0000', '11111111111', '11111111111', '11111111111', '111111111111111', 2147483647, '1111111111111111', '1111111111111111'),
-(8, '11111111111111', '0000', '11111111111', '11111111111', '11111111111', '111111111111111', 2147483647, '1111111111111111', '1111111111111111');
+(8, '11111111111111', '0000', '11111111111', '11111111111', '11111111111', '111111111111111', 2147483647, '1111111111111111', '1111111111111111'),
+(9, 'David Gabriel Tarley', '2001', '48084432888', '19987172000', '77777777777', 'vecio ', 777, 'vila', 'Americana');
 
 -- --------------------------------------------------------
 
@@ -78,8 +78,8 @@ INSERT INTO `tb_usuario` (`id`, `usuario`, `senha`, `id_pessoa`) VALUES
 (4, 'viuvaNegra', 'assassinaVermelha', 4),
 (5, 'deusDoTrovao', 'mjolnir123', 5),
 (6, 'hulk', 'smash123', 6),
-(7, 'DAVID GABRIEL TARLEY', '1111111', 0),
-(8, 'DAVID GABRIEL TARLEY', '1111111', 0);
+(8, 'DAVID update', '222222222222222', 8),
+(9, 'teste 1.2', '654321', 9);
 
 --
 -- Índices para tabelas despejadas
@@ -105,13 +105,13 @@ ALTER TABLE `tb_usuario`
 -- AUTO_INCREMENT de tabela `tb_pessoa`
 --
 ALTER TABLE `tb_pessoa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tb_usuario`
 --
 ALTER TABLE `tb_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
