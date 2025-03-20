@@ -23,8 +23,33 @@ var_dump($_POST);
     //quase sempre se le de tras pra frente = resultado do meu scrip do meu banco;
     $resultado = $banco-> query($queryUsuarioSenha)->fetch();
  
-    var_dump ($resultado);
+    $status = $resultado['status'];
  
+?>
+
+<?php if ($status == 'admin'){ ?>
+
+    <h1>Bem Vindo Usuario ADMIN</h1>
+
+<?php } ?>
+
+
+
+<?php if ($status == 'comum'){ ?>
+
+    <h1>Bem Vindo Usuario COMUM</h1>
+
+<?php } ?>
+
+
+
+
+
+
+
+
+<?php
+    die;
     if (!empty($resultado)&& $resultado != false){
         header ('location:user_lista.php');
  

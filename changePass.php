@@ -26,11 +26,11 @@
         <div class="row mt-2">
             <div class="col">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" class="form-control">
+                <input type="text" name="usuario" class="form-control" required>
             </div>
             <div class="col">
                 <label for="cpf">CPF</label>
-                <input type="text" name="cpf" class="form-control">
+                <input type="text" name="cpf" class="form-control" required maxlength="14">
             </div>
         </div>
         <br>
