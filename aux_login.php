@@ -27,7 +27,7 @@ var_dump($_POST);
  
 ?>
 
-<?php if ($status == 'admin'){ ?>
+<?php if ($status == 'admin'){ ?>   
 
     <h1>Bem Vindo Usuario ADMIN</h1>
 
